@@ -1,0 +1,105 @@
+CHAPTER 1: What is a pointer?
+
+A variable is a name given to the memory location of a value.
+Basically a variable creates a named memory and thus dictates 
+the size of memory to be create due to the type of data to be stored.
+
+Two values are associated with a variable. The value storeed in the
+ variable and the address.
+Example: int x = 2; the value 2 and the address of x are associated with x.
+
+A pointer variable is a variable that has the address of another variable
+ as its value. It is a way to tell the compiler that we wan to store an 
+address instead.
+Example: int *y;
+
+A null pointer is unintialiazed, just as the example above.
+
+As the pointer, y, has been declared, it can be assigned a value by, y = &x;
+ The & operator retrieves the address of x and copies it to the pointer. 
+Thus y is no more null.
+
+use %p format for the address.
+
+// code on pointers
+#include <stdio.h>
+
+int main() {
+    // code
+    int x = 2;
+    int *y = &x;
+    
+    printf("%d\n", *y);
+    printf("%p\n", y);
+    
+    *y = 7;
+    printf("%d\n", *y);
+    printf("%p\n", y);
+    
+    x = 10;
+    printf("%d\n", *y);
+    printf("%p\n", y);
+        
+    return 0;
+}
+
+One of the few things is that, the memory address of y remains same and a 
+modification of x, modifies y.
+
+For a pointer, ptr, just the variable is a reference to the variables 
+(pointers) address.
+For a normal variable, x, &x references the to the variables address.
+
+
+
+CHAPTER 2: Pointer types and Arrays
+
+It is necessary to identify the type of a pointer. This allows the compiler to
+ know how many bytes to copy into that memory location pointed to by pointer
+ 
+Pointer arithmetic, when a pointer is used for arithmetic.
+
+Consider, that the array of integers, int arr[5] = {1, 2, 3, 4, 5};
+In a loop, where the loop counter, i, starts from 0, we can write *(arr + i).
+
+When i=0, the address remains the same but when i=1, the size of an int is added
+to the memory address, pointing to the second element and so on. Think about the
+increment as sizeof(type), so *(array_address + sizeof(type)).
+
+Given an array of 5 elements, int arr[5] = {1, 2, 3, 4, 5};
+We can create a pointer and assign the first element's address to the pointer.
+Example, int *ptr; ptr = &arr[0].
+
+The above can also be written as, ptr = arr;
+
+Since an array is a contiguous memory, this will work fine.
+
+Due to this, the name of an array is the address of first element in the array.
+
+When we have say, 
+int x, y;
+x =  2;
+y = x;
+
+Basically, a constant is assigned to x and something like, &x is assigned to y.
+
+void *vptr, Void pointers are like generic pointers.
+
+
+CHAPTER 3: Pointers and Strings
+
+In C, a string is an array of characters terminated with the nul character, '\0'.
+
+This means, we can write, char name[100] = {'d', 'a', 'n', 'i', 'e', 'l', '\0'};
+Alternatively, char name = "daniel"; '\0' is automatically added when a double quote
+
+Say we have a pointer, *ptr, *ptr++ returns the pointer and increases it. But, (*ptr)++
+increases the value the pointer returns.
+
+ 
+CHAPTER 4: More on Strings
+
+
+
+
+
